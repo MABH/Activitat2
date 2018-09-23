@@ -47,6 +47,10 @@ public class GameplayManager : MonoBehaviour {
     void FillUI()
     {
         historyText.text += "\n" + "\n" + current.history;
+        if (current.nodeVisited != null)
+        {
+            current.nodeVisited();
+        }
         foreach (Transform child in answersParent.transform)
         {
             Destroy(child.gameObject);
